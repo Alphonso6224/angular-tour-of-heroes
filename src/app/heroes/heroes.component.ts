@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 
 import { HEROES } from '../mock-heroes';
 import { Hero } from '../hero';
@@ -13,7 +14,8 @@ import { Hero } from '../hero';
     CommonModule,
     FormsModule,
     NgFor,
-    NgIf
+
+    HeroDetailComponent
   ],
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.css'

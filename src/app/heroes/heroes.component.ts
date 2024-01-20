@@ -6,6 +6,7 @@ import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 
 @Component({
@@ -15,6 +16,8 @@ import { MessageService } from '../message.service';
     CommonModule,
     FormsModule,
     NgFor,
+    RouterLink,
+    RouterLinkActive,
 
     HeroDetailComponent
   ],
@@ -25,8 +28,6 @@ export class HeroesComponent implements OnInit {
 
   // comporte le HEROES Tableau pour les liaisons
   heroes: Hero[] = [];
-
-  selectedHero?: Hero;
 
   constructor(
     private heroService: HeroService,
@@ -43,9 +44,4 @@ export class HeroesComponent implements OnInit {
         .subscribe(heroes => this.heroes = heroes);
   }
 
-
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
 }
